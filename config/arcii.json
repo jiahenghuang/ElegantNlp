@@ -1,0 +1,51 @@
+{
+    "train_data":{
+        "train_file": "za_data/train_ids.txt.tf",
+        "data_size": 238760,
+        "left_slots" : [["left",50]],
+        "right_slots" : [["right",50]]
+    },
+
+    "model":{
+        "net_py": "./nets/arcii",
+        "net_class": "ARCII",
+        "vocabulary_size": 39625,
+        "embedding_dim": 64,
+        "num_filters_1": 16,
+        "window_size_1": 2,
+        "num_filters_2": 32,
+        "window_size_2": 3,
+        "pool_size2": 3,
+        "loss_py": "./layers/tf_loss",
+        "loss_class": "SoftmaxWithLoss",
+        "dropout_rate": 0.5
+    },
+
+    "global":{
+        "n_class": 2,
+        "max_len_left": 50,
+        "max_len_right": 50
+    },
+
+    "setting":{
+        "batch_size": 64,
+        "num_epochs": 10,
+        "thread_num": 6,
+        "print_iter": 100,
+        "model_path": "model",
+        "model_prefix": "arcii",
+        "learning_rate": 0.001,
+        "shuffle": 1
+    },
+
+    "test_data":{
+        "test_file": "data/test_ids.txt.tf",
+        "test_model_file":  "model/arcii.",
+        "test_result": "result/result_arcii"
+    },
+
+    "graph":{
+        "graph_path": "graph",
+        "graph_name": "model_arcii.protxt"
+    }
+}

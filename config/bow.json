@@ -1,0 +1,47 @@
+{
+    "train_data":{
+        "train_file": "data/train_ids.txt.tf",
+        "data_size": 238760,
+        "left_slots": [["left", 50]],
+        "right_slots": [["right", 50]]
+    },
+
+    "model":{
+        "net_py": "./nets/bow",
+        "net_class": "BOW",
+        "vocabulary_size": 39625,
+        "embedding_dim": 256,
+        "bow_size": 128,
+        "hidden_size": 128,
+        "loss_py": "./layers/tf_loss",
+        "loss_class": "SoftmaxWithLoss"
+    },
+
+    "global": {
+        "n_class": 2,
+        "max_len_left": 50,
+        "max_len_right": 50
+    },
+
+    "setting": {
+        "batch_size": 64,
+        "num_epochs": 10,
+        "thread_num": 6,
+        "print_iter": 100,
+        "model_path": "model",
+        "model_prefix": "bow",
+        "learning_rate": 0.001,
+        "shuffle": 1
+    },
+
+    "test_data": {
+        "test_file": "data/test_ids.txt.tf",
+        "test_model_file": "model/bow.",
+        "test_result": "result/result_bow"
+    },
+
+    "graph": {
+        "graph_path": "graph",
+        "graph_name": "model_bow.protxt"
+    }
+}

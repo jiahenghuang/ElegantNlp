@@ -1,0 +1,49 @@
+{
+    "train_data":{
+        "train_file": "data/train_ids.txt.tf",
+        "data_size": 238760,
+        "left_slots" : [["left",50]],
+        "right_slots" : [["right",50]]
+    },
+
+    "model":{
+        "net_py": "./nets/arci",
+        "net_class": "ARCI",
+        "vocabulary_size": 39625,
+        "embedding_dim": 256,
+        "num_filters": 256,
+        "hidden_size": 128,
+        "window_size": 3,
+        "loss_py": "./layers/tf_loss",
+        "loss_class": "SoftmaxWithLoss",
+        "dropout_rate": 0.5
+    },
+
+    "global":{
+        "n_class": 2,
+        "max_len_left": 50,
+        "max_len_right": 50
+    },
+
+    "setting":{
+        "batch_size": 64,
+        "num_epochs": 10,
+        "thread_num": 6,
+        "print_iter": 100,
+        "model_path": "model",
+        "model_prefix": "arci",
+        "learning_rate": 0.001,
+        "shuffle": 1
+    },
+
+    "test_data":{
+        "test_file": "data/test_ids.txt.tf",
+        "test_model_file":  "model/arci.",
+        "test_result": "result/result_arci"
+    },
+
+    "graph":{
+        "graph_path": "graph",
+        "graph_name": "model_arci.protxt"
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "train_data":{
+        "train_file": "data/train_ids.txt.tf",
+        "data_size": 238760,
+        "left_slots" : [["left",50]],
+        "right_slots" : [["right",50]]
+    },
+
+    "model":{
+        "net_py": "./nets/mvlstm",
+        "net_class": "MVLSTM",
+        "vocabulary_size": 39625,
+        "embedding_dim": 256,
+        "hidden_size": 128,
+        "k_max_num": 32,
+        "match_mask" : 1,
+        "loss_py": "./layers/tf_loss",
+        "loss_class": "SoftmaxWithLoss"
+    },
+
+    "global":{
+        "n_class": 2,
+        "max_len_left": 50,
+        "max_len_right": 50
+    },
+
+    "setting":{
+        "batch_size": 64,
+        "num_epochs": 10,
+        "thread_num": 6,
+        "print_iter": 100,
+        "model_path": "model",
+        "model_prefix": "mvlstm",
+        "learning_rate": 0.001,
+        "shuffle": 1
+    },
+
+    "test_data":{
+        "test_file": "data/test_ids.txt.tf",
+        "test_model_file":  "model/mvlstm.",
+        "test_result": "result/result_mvlstm"
+    },
+
+    "graph":{
+        "graph_path": "graph",
+        "graph_name": "model_mvlstm.protxt"
+    }
+}
