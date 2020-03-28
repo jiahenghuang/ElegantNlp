@@ -13,6 +13,7 @@
         "embedding_dim": 256,
         "num_filters": 256,
         "hidden_size": 128,
+        "pool_size": 3,
         "window_size": 3,
         "loss_py": "./layers/tf_loss",
         "loss_class": "SoftmaxWithLoss",
@@ -26,7 +27,7 @@
     },
 
     "setting":{
-        "batch_size": 64,
+        "batch_size": 128,
         "num_epochs": 5,
         "thread_num": 6,
         "print_iter": 100,

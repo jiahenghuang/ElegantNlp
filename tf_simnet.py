@@ -55,10 +55,17 @@ def predict(conf_dict):
     controler.run_predict(pred, test_y, conf_dict)
 
 if __name__ == "__main__": 
-    model_configs = os.listdir('config')
-    model_configs = ['config/'+config for config in model_configs] 
-    for model_config in model_configs:
-        config = load_config(model_config)
+    # model_configs = os.listdir('config')
+    # model_configs = ['config/'+config for config in model_configs] 
+    # for model_config in model_configs:
+    #     config = load_config(model_config)
+    #     config.update({'train_file': 'data/train_ids.txt.tf',
+    #                'test_file': 'data/test_ids.txt.tf',
+    #                'vocabulary_size': 39625})
+    #     train(config)
+    #     print("- "*20)
+    #     predict(config)
+        config = load_config('config/arci.json')
         config.update({'train_file': 'data/train_ids.txt.tf',
                    'test_file': 'data/test_ids.txt.tf',
                    'vocabulary_size': 39625})
