@@ -65,7 +65,7 @@ if __name__ == "__main__":
     #     train(config)
     #     print("- "*20)
     #     predict(config)
-        config = load_config('config/arci.json')
+        config = load_config('config/arcii.json')
         config.update({'train_file': 'data/train_ids.txt.tf',
                    'test_file': 'data/test_ids.txt.tf',
                    'vocabulary_size': 39625})
