@@ -66,7 +66,7 @@ def run_trainer(loss, optimizer, config):
         pi_list = []
         for k in ["model_prefix", "embedding_dim", "batch_size", "learning_rate"]:
             pi_list += [str(config[k])]
-        tb_path = "../graph/{}".format("_".join(pi_list))
+        tb_path = "graph/{}".format("_".join(pi_list))
         writer = tf.compat.v1.summary.FileWriter(tb_path, sess.graph)
         sess.run(init)
         coord = tf.train.Coordinator()
